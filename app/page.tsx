@@ -11,7 +11,7 @@ export default function Home() {
       <section className="text-center mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
         <h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">About Me</h3>
         <p className="text-lg mt-4 text-gray-800 dark:text-gray-200">
-          I'm a full-stack developer with a passion for web3 technologies. I enjoy creating user-friendly web applications and optimizing backend processes. I stay updated with the latest trends and enjoy continuously improving my skills and the projects I work on.
+          I am a full-stack developer with a passion for web3 technologies. I enjoy creating user-friendly web applications and optimizing backend processes. I stay updated with the latest trends and enjoy continuously improving my skills and the projects I work on.
         </p>
       </section>
 
