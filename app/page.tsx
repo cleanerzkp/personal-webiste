@@ -1,75 +1,101 @@
 import Image from "next/image";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gray-100 dark:bg-gray-900">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-blue-700 dark:text-blue-300">Kacper Karbownik</h1>
-        <h2 className="text-2xl text-blue-500 dark:text-blue-200">Full-stack + Smart Contract Developer</h2>
-      </header>
-
-      <section className="text-center mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">About Me</h3>
-        <p className="text-lg mt-4 text-gray-800 dark:text-gray-200">
-          I am a full-stack developer with a passion for web3 technologies. I enjoy creating user-friendly web applications and optimizing backend processes. I stay updated with the latest trends and enjoy continuously improving my skills and the projects I work on.
-        </p>
-      </section>
-
-      <section className="text-center mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h3 className="text-2xl font-semibold text-purple-600 dark:text-purple-400">My Skills</h3>
-        <ul className="text-lg mt-4 list-disc list-inside text-gray-800 dark:text-gray-200">
-          <li>JavaScript, TypeScript, React, Next.js</li>
-          <li>Node.js, Express.js, MongoDB</li>
-          <li>Solidity, Smart Contracts, Web3.js</li>
-          <li>HTML, CSS, Tailwind CSS</li>
-          <li>Git, Docker, CI/CD</li>
-        </ul>
-      </section>
-
-      <section className="text-center mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h3 className="text-2xl font-semibold text-red-600 dark:text-red-400">Projects</h3>
-        <div className="mt-4">
-          <h4 className="text-xl font-semibold text-red-400 dark:text-red-300">Project 1</h4>
-          <p className="text-lg text-gray-800 dark:text-gray-200">Description of project 1.</p>
-        </div>
-        <div className="mt-4">
-          <h4 className="text-xl font-semibold text-red-400 dark:text-red-300">Project 2</h4>
-          <p className="text-lg text-gray-800 dark:text-gray-200">Description of project 2.</p>
-        </div>
-        <div className="mt-4">
-          <h4 className="text-xl font-semibold text-red-400 dark:text-red-300">Project 3</h4>
-          <p className="text-lg text-gray-800 dark:text-gray-200">Description of project 3.</p>
+    <main className="min-h-screen bg-background text-foreground">
+      <Hero />
+      
+      <section id="about" className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-primary">About Me</h2>
+          <p className="text-lg mb-6">
+            As a full-stack developer with a passion for web3 technologies, I bridge the gap between traditional web development and blockchain innovations. My expertise spans from crafting intuitive user interfaces to optimizing backend processes and developing smart contracts.
+          </p>
+          <p className="text-lg">
+            I am committed to staying at the forefront of tech trends, continuously refining my skills to deliver cutting-edge solutions that push the boundaries of what's possible in web development.
+          </p>
         </div>
       </section>
-
-      <section className="text-center mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h3 className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">Contact Me</h3>
-        <p className="text-lg mt-4 text-gray-800 dark:text-gray-200">
-          Feel free to reach out to me through the following platforms:
-        </p>
-        <ul className="text-lg mt-4 list-disc list-inside text-gray-800 dark:text-gray-200">
-          <li>Email: kacper@example.com</li>
-          <li>LinkedIn: <a href="https://linkedin.com/in/kacper" target="_blank" className="text-blue-500 dark:text-blue-300">linkedin.com/in/kacper</a></li>
-          <li>GitHub: <a href="https://github.com/kacper" target="_blank" className="text-blue-500 dark:text-blue-300">github.com/kacper</a></li>
-        </ul>
+      
+      <section id="skills" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-primary">My Skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-card p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-secondary">Frontend</h3>
+              <ul className="list-disc list-inside">
+                <li>React & Next.js</li>
+                <li>TypeScript</li>
+                <li>Tailwind CSS</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+            <div className="bg-card p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-secondary">Backend</h3>
+              <ul className="list-disc list-inside">
+                <li>Node.js & Express</li>
+                <li>MongoDB & SQL</li>
+                <li>RESTful APIs</li>
+                <li>GraphQL</li>
+              </ul>
+            </div>
+            <div className="bg-card p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-secondary">Web3</h3>
+              <ul className="list-disc list-inside">
+                <li>Solidity</li>
+                <li>Ethereum & EVM</li>
+                <li>Smart Contracts</li>
+                <li>Web3.js & Ethers.js</li>
+              </ul>
+            </div>
+            <div className="bg-card p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-secondary">Tools & Others</h3>
+              <ul className="list-disc list-inside">
+                <li>Git & GitHub</li>
+                <li>Docker</li>
+                <li>CI/CD</li>
+                <li>Agile Methodologies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
-
-      <footer className="mt-12">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-gray-800 dark:text-gray-200"
-        >
-          Powered by{" "}
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            width={100}
-            height={24}
-            priority
-          />
-        </a>
+      
+      <section id="projects" className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-primary">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((project) => (
+              <div key={project} className="bg-background rounded-lg overflow-hidden shadow-lg">
+                <div className="h-48 bg-muted"></div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-secondary">Project {project}</h3>
+                  <p className="text-muted-foreground mb-4">Short description of project {project}. Highlight key features or technologies used.</p>
+                  <a href="#" className="text-primary hover:text-primary-foreground transition duration-300">Learn More →</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <section id="contact" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-primary">Contact Me</h2>
+          <p className="text-lg mb-6">
+            I'm always open to new opportunities and collaborations. Feel free to reach out!
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+            <a href="mailto:kacper@example.com" className="text-primary hover:text-primary-foreground transition duration-300">kacper@example.com</a>
+            <a href="https://linkedin.com/in/kacper" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-foreground transition duration-300">LinkedIn</a>
+            <a href="https://github.com/kacper" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-foreground transition duration-300">GitHub</a>
+          </div>
+        </div>
+      </section>
+      
+      <footer className="py-6 bg-card text-center">
+        <p className="text-muted-foreground">© 2023 Kacper Karbownik. All rights reserved.</p>
       </footer>
     </main>
   );
