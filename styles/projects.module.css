@@ -1,0 +1,60 @@
+.projectsSection {
+  @apply py-16 px-4 sm:px-6 lg:px-8;
+}
+
+.sectionTitle {
+  @apply text-3xl font-bold mb-2 text-center;
+}
+
+.sectionDescription {
+  @apply text-base text-muted-foreground mb-8 text-center;
+}
+
+.projectsGrid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.projectCard {
+  @apply bg-card rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.projectContent {
+  @apply p-4;
+}
+
+.projectHeader {
+  @apply flex items-center justify-between mb-3;
+}
+
+.projectLogo {
+  @apply w-10 h-10 rounded-md;
+}
+
+.projectTitle {
+  @apply text-xl font-semibold;
+}
+
+.projectDescription {
+  @apply text-sm text-muted-foreground mb-3;
+}
+
+.externalLink {
+  @apply text-muted-foreground hover:text-primary transition-colors duration-200;
+}
+
+.projectGif {
+  @apply relative h-48 w-full;
+}
+
+.projectGif img {
+  @apply object-cover filter grayscale transition-all duration-300;
+}
+
+.projectCard:hover .projectGif img {
+  @apply grayscale-0;
+}
+
+.seeAllButton {
+  @apply mt-10 mx-auto block px-6 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium transition-all duration-200 ease-in-out hover:bg-opacity-90 hover:shadow-md;
+}

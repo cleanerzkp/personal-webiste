@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Hero from "@/components/hero";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Hero />
-      
+
       <section id="about" className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-primary">About Me</h2>
@@ -17,7 +18,9 @@ export default function Home() {
           </p>
         </div>
       </section>
-      
+
+      <Projects />
+
       <section id="skills" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-primary">My Skills</h2>
@@ -61,25 +64,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      <section id="projects" className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-primary">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((project) => (
-              <div key={project} className="bg-background rounded-lg overflow-hidden shadow-lg">
-                <div className="h-48 bg-muted"></div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-secondary">Project {project}</h3>
-                  <p className="text-muted-foreground mb-4">Short description of project {project}. Highlight key features or technologies used.</p>
-                  <a href="#" className="text-primary hover:text-primary-foreground transition duration-300">Learn More →</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
+
       <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-primary">Contact Me</h2>
@@ -93,7 +78,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       <footer className="py-6 bg-card text-center">
         <p className="text-muted-foreground">© 2023 Kacper Karbownik. All rights reserved.</p>
       </footer>
