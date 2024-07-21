@@ -64,24 +64,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section id="contact" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-primary">Contact Me</h2>
-          <p className="text-lg mb-6">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
-            <a href="mailto:kacper@example.com" className="text-primary hover:text-primary-foreground transition duration-300">kacper@example.com</a>
-            <a href="https://linkedin.com/in/kacper" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-foreground transition duration-300">LinkedIn</a>
-            <a href="https://github.com/kacper" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-foreground transition duration-300">GitHub</a>
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-6 bg-card text-center">
-        <p className="text-muted-foreground">© 2023 Kacper Karbownik. All rights reserved.</p>
-      </footer>
     </main>
   );
 }
