@@ -59,13 +59,13 @@ console.log(\`Hire \${kacper.role} for your next \${kacper.seeking}!\`);`;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, height: "400px" }}
-      animate={{ 
-        opacity: 1, 
-        y: 0, 
-        height: isTyping ? "300px" : "400px" 
+      animate={{
+        opacity: 1,
+        y: 0,
+        height: isTyping ? "300px" : "400px"
       }}
       transition={{ duration: 0.8 }}
-      className="w-full max-w-2xl p-6 rounded-lg shadow-lg font-mono text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 overflow-hidden"
+      className="w-full max-w-2xl p-6 rounded-lg shadow-lg font-mono text-sm bg-white/30 dark:bg-gray-800/30 backdrop-blur-md text-gray-900 dark:text-gray-100 overflow-hidden"
     >
       <div className="flex space-x-2 mb-4">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -77,7 +77,7 @@ console.log(\`Hire \${kacper.role} for your next \${kacper.seeking}!\`);`;
           <div className="flex items-center justify-center flex-grow">
             <button
               onClick={handleDiscover}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-8 rounded-full text-center transition duration-300"
+              className="bg-primary/70 text-primary-foreground hover:bg-primary/90 font-bold py-3 px-8 rounded-full text-center transition duration-300 backdrop-blur-sm"
             >
               About me
             </button>
@@ -93,4 +93,4 @@ console.log(\`Hire \${kacper.role} for your next \${kacper.seeking}!\`);`;
   );
 };
 
-export default InteractiveTerminal;
+export default InteractiveTerminal
