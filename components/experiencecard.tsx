@@ -1,47 +1,38 @@
 import React from 'react';
-import Image from 'next/image';
-import { ExternalLink } from 'lucide-react';
 import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 interface Experience {
   companyName: string;
-  logo?: string;
   position: string;
   description: string;
-  startDate?: string;
+  startDate: string;
   endDate?: string;
-  url: string;
   tags: string[];
 }
 
 const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) => {
-  const { companyName, logo, position, description, startDate, endDate, url, tags } = experience;
+  const { companyName, position, description, startDate, endDate, tags } = experience;
 
   return (
-    <Card className="flex flex-col h-full shadow-lg transition-transform transform hover:scale-105">
+    <Card className="flex flex-col h-full shadow-lg transition-all duration-300 hover:shadow-xl">
       <CardHeader className="flex justify-between items-start p-4">
-        <div className="flex items-center">
-          {logo && <Image src={logo} alt={`${companyName} logo`} width={24} height={24} className="rounded-full mr-2" />}
+        <div>
           <h3 className="text-lg font-bold">{companyName}</h3>
+          <h4 className="text-md font-semibold text-muted-foreground">{position}</h4>
         </div>
-        <a href={url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-          <ExternalLink size={20} />
-        </a>
       </CardHeader>
       <CardContent className="p-4 flex-grow">
-        <h4 className="text-md font-semibold text-muted-foreground mb-2">{position}</h4>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        {startDate && (
-          <p className="text-xs text-muted-foreground mb-2">
-            {endDate ? `${startDate} - ${endDate}` : `Started: ${startDate}`}
-          </p>
-        )}
+        <p className="text-xs text-muted-foreground">
+          {endDate ? `${startDate} - ${endDate}` : `${startDate} - Present`}
+        </p>
       </CardContent>
       <CardFooter className="p-4 flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <span key={tag} className="bg-blue-100 text-blue-800 py-1 px-2 rounded-md text-xs font-medium">
+          <Badge key={tag} variant="secondary" className="text-xs">
             {tag}
-          </span>
+          </Badge>
         ))}
       </CardFooter>
     </Card>

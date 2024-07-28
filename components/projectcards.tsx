@@ -1,75 +1,68 @@
 import React from 'react';
-import Image from 'next/image';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 interface Project {
   id: string;
   title: string;
   description: string;
-  logo?: string;
-  emoji?: string;
+  emoji: string;
   externalLink?: string;
   githubLink?: string;
-  tags?: string[];
-  label?: string;
-  startDate?: string;
-  endDate?: string;
-  hackathonWin?: string;
+  hackathon?: string;
+  award?: string;
+  date?: string;
 }
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
-  const { title, description, logo, emoji, externalLink, githubLink, tags, label, startDate, endDate, hackathonWin } = project;
+  const { title, description, emoji, externalLink, githubLink, hackathon, award, date } = project;
 
   return (
-    <Card className="flex flex-col h-full shadow-lg transition-transform transform hover:scale-105">
-      <CardHeader className="flex justify-between items-start p-4">
-        <div className="flex items-center">
-          {emoji ? (
-            <span className="text-2xl mr-2">{emoji}</span>
-          ) : logo ? (
-            <Image src={logo} alt={`${title} logo`} width={24} height={24} className="rounded-full mr-2" />
-          ) : null}
-          <h3 className="text-lg font-bold">{title}</h3>
+    <Card className="flex flex-col h-full transition-all duration-300 hover:shadow-lg">
+      <CardHeader className="relative flex flex-col space-y-2 p-4">
+        <div className="flex justify-between items-start">
+          <div className="flex items-center space-x-2">
+            <span className="text-2xl">{emoji}</span>
+            <h3 className="text-lg font-semibold">{title}</h3>
+          </div>
+          <div className="absolute top-4 right-4 flex space-x-2">
+            {githubLink && (
+              <Button variant="ghost" size="icon" asChild>
+                <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                  <FaGithub className="h-4 w-4" />
+                </a>
+              </Button>
+            )}
+            {externalLink && (
+              <Button variant="ghost" size="icon" asChild>
+                <a href={externalLink} target="_blank" rel="noopener noreferrer" aria-label="Project Website">
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            )}
+          </div>
         </div>
-        <div className="flex gap-2">
-          {githubLink && (
-            <a href={githubLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-              <FaGithub size={20} />
-            </a>
-          )}
-          {externalLink && (
-            <a href={externalLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-              <ExternalLink size={20} />
-            </a>
-          )}
-        </div>
-      </CardHeader>
-      <CardContent className="p-4 flex-grow">
-        <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        {startDate && (
-          <p className="text-xs text-muted-foreground mb-2">
-            {endDate ? `${startDate} - ${endDate}` : `Started: ${startDate}`}
-          </p>
+        {date && (
+          <p className="text-xs text-muted-foreground">{date}</p>
         )}
+      </CardHeader>
+      <CardContent className="flex-grow p-4">
+        <p className="text-sm text-muted-foreground">{description}</p>
       </CardContent>
       <CardFooter className="p-4 flex flex-wrap gap-2">
-        {hackathonWin && (
-          <span className="bg-yellow-100 text-yellow-800 py-1 px-2 rounded-md text-xs font-medium">
-            🏆 {hackathonWin}
-          </span>
+        {hackathon && (
+          <Badge className="text-xs font-medium bg-blue-100 text-blue-800">
+            {hackathon}
+          </Badge>
         )}
-        {label && (
-          <span className="bg-green-100 text-green-800 py-1 px-2 rounded-md text-xs font-medium">
-            {label}
-          </span>
+        {award && (
+          <Badge className="text-xs font-medium bg-yellow-100 text-yellow-800">
+            {award}
+          </Badge>
         )}
-        {tags?.map((tag) => (
-          <span key={tag} className="bg-purple-100 text-purple-800 py-1 px-2 rounded-md text-xs font-medium">
-            {tag}
-          </span>
-        ))}
       </CardFooter>
     </Card>
   );
