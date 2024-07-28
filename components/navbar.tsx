@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -21,13 +21,13 @@ const MainNav: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="bg-background/30 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-foreground hover:text-primary transition-colors">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-foreground hover:text-primary transition-colors -ml-4">
             KK
           </Link>
           
-          <nav className="hidden md:block">
-            <ul className="flex space-x-1">
+          <nav className="hidden md:flex justify-center w-full max-w-2xl">
+            <ul className="flex space-x-4">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -50,7 +50,7 @@ const MainNav: React.FC = () => {
             </ul>
           </nav>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 -mr-4">
             <ModeToggle />
             <button
               className="md:hidden text-foreground hover:text-primary"

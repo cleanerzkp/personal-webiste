@@ -6,7 +6,7 @@ import InteractiveTerminal from './InteractiveTerminal';
 const Hero: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-background text-foreground">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap- lg:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}

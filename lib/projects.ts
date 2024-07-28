@@ -17,5 +17,22 @@ export const projectsData = [
     githubLink: 'https://github.com/fakeusername/blockchainbloopers',
     externalLink: 'https://blockchainbloopers.com'
   },
-  // Add more projects as needed
+  {
+    id: 'cryptokittiesparody',
+    title: 'Crypto Kitties Parody',
+    description: 'A parody version of the popular CryptoKitties game, featuring hilarious and absurd digital cats.',
+    logo: '/projects/cryptokittiesparody-logo.png',
+    gif: '/projects/cryptokittiesparody-demo.gif',
+    githubLink: 'https://github.com/fakeusername/cryptokittiesparody',
+    externalLink: 'https://cryptokittiesparody.com'
+  },
+  {
+    id: 'decentralol',
+    title: 'DecentraLOL',
+    description: 'A meme-based social media platform where users can share and vote on the funniest blockchain-related memes.',
+    logo: '/projects/decentralol-logo.png',
+    gif: '/projects/decentralol-demo.gif',
+    githubLink: 'https://github.com/fakeusername/decentralol',
+    externalLink: 'https://decentralol.com'
+  }
 ];

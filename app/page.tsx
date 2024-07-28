@@ -1,69 +1,47 @@
-import Image from "next/image";
+import React from 'react';
 import Hero from "@/components/hero";
-import Projects from "@/components/projects";
+import ProjectCard from '@/components/projectcards';
+import ExperienceCard from '@/components/experiencecard';
+import { projectsData } from "@/lib/projects";
+import { experiences } from '@/lib/experience';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Hero />
-
-      <section id="about" className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-primary">About Me</h2>
-          <p className="text-lg mb-6">
-            As a full-stack developer with a passion for web3 technologies, I bridge the gap between traditional web development and blockchain innovations. My expertise spans from crafting intuitive user interfaces to optimizing backend processes and developing smart contracts.
-          </p>
-          <p className="text-lg">
-            I am committed to staying at the forefront of tech trends, continuously refining my skills to deliver cutting-edge solutions that push the boundaries of what's possible in web development.
-          </p>
-        </div>
-      </section>
-
-      <Projects />
-
-      <section id="skills" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-primary">My Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-card p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Frontend</h3>
-              <ul className="list-disc list-inside">
-                <li>React & Next.js</li>
-                <li>TypeScript</li>
-                <li>Tailwind CSS</li>
-                <li>Responsive Design</li>
-              </ul>
-            </div>
-            <div className="bg-card p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Backend</h3>
-              <ul className="list-disc list-inside">
-                <li>Node.js & Express</li>
-                <li>MongoDB & SQL</li>
-                <li>RESTful APIs</li>
-                <li>GraphQL</li>
-              </ul>
-            </div>
-            <div className="bg-card p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Web3</h3>
-              <ul className="list-disc list-inside">
-                <li>Solidity</li>
-                <li>Ethereum & EVM</li>
-                <li>Smart Contracts</li>
-                <li>Web3.js & Ethers.js</li>
-              </ul>
-            </div>
-            <div className="bg-card p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Tools & Others</h3>
-              <ul className="list-disc list-inside">
-                <li>Git & GitHub</li>
-                <li>Docker</li>
-                <li>CI/CD</li>
-                <li>Agile Methodologies</li>
-              </ul>
-            </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="projects" className="py-16 sm:py-24">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">Projects</h2>
+            <p className="text-lg text-muted-foreground">
+              Innovative solutions I've built during Web3 hackathons and beyond.
+            </p>
           </div>
-        </div>
-      </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {projectsData.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </section>
+
+        <section id="experience" className="py-16 sm:py-24">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">Experience</h2>
+            <p className="text-lg text-muted-foreground">
+              Places where I've contributed and grown as a developer.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {experiences.map((experience) => (
+              <ExperienceCard
+                key={experience.companyName}
+                experience={experience}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
