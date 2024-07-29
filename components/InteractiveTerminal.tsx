@@ -9,13 +9,15 @@ const InteractiveTerminal: React.FC = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
 
   const fullText = `const kacper = {
-  role: "Full-Stack Web3 Developer",
-  skills: ["React", "Node.js", "Solidity", "TypeScript"],
-  passion: "Building decentralized applications",
-  seeking: "Challenging Web3 projects"
+  skills: ["TypeScript", "React", "Solidity", "Node.js"],
+  passions: ["dApps 🏗️", "Blockchain 🔗"],
+  hobbies: ["Coding 💻", "Working-out 🏋️‍♂️", "Coffee ☕"],
+  achievement: "ETH Global Brussels Finalist 🏆",
+  learning: ["ZK proofs 🔐, ML 🤖"],
+  building: ["DEX dark pool 🌊, AI smart contract generator 🧠⚡"]
 };
 
-console.log(\`Hire \${kacper.role} for your next \${kacper.seeking}!\`);`;
+console.log("Hi 👋 I'm Kacper, a Full-Stack Web3 Developer");`;
 
   useEffect(() => {
     if (isTyping) {
@@ -42,14 +44,14 @@ console.log(\`Hire \${kacper.role} for your next \${kacper.seeking}!\`);`;
   const syntaxHighlight = (code: string): JSX.Element[] => {
     return code.split('\n').map((line, index) => (
       <div key={index} className="flex">
-        {line.split(/([{}(),]|"(?:\\.|[^"\\])*"|\/\/.*)/).map((part, i) => {
-          if (part.match(/^".*"$/)) return <span key={i} className="text-green-500 dark:text-green-300">{part}</span>;
-          if (part.match(/^\/\/.*$/)) return <span key={i} className="text-gray-500 dark:text-gray-400">{part}</span>;
-          if (part.match(/const|let|var|function|return|type|interface/)) return <span key={i} className="text-blue-500 dark:text-blue-300">{part}</span>;
-          if (part.match(/[\{\}\(\),]/)) return <span key={i} className="text-gray-700 dark:text-gray-300">{part}</span>;
-          if (part.match(/true|false|null|undefined/)) return <span key={i} className="text-purple-500 dark:text-purple-300">{part}</span>;
-          if (part.match(/^[a-zA-Z]+:/)) return <span key={i} className="text-yellow-500 dark:text-yellow-300">{part}</span>;
-          if (part.match(/console\.log/)) return <span key={i} className="text-red-500 dark:text-red-300">{part}</span>;
+        {line.split(/(".*?"|\/\/.*|\b(?:const|let|var|function|return|type|interface|skills|passions|hobbies|achievement|learning|building)\b|[{}(),[\]:.])/).filter(part => part).map((part, i) => {
+          if (/^".*"$/.test(part)) return <span key={i} className="text-green-500 dark:text-green-300">{part}</span>;
+          if (/^\/\/.*$/.test(part)) return <span key={i} className="text-gray-500 dark:text-gray-400">{part}</span>;
+          if (/\b(const|let|var|function|return|type|interface)\b/.test(part)) return <span key={i} className="text-blue-500 dark:text-blue-300">{part}</span>;
+          if (/[{}(),[\]:.]/.test(part)) return <span key={i} className="text-gray-700 dark:text-gray-300">{part}</span>;
+          if (/\b(skills|passions|hobbies|achievement|learning|building)\b/.test(part)) return <span key={i} className="text-purple-500 dark:text-purple-300">{part}</span>;
+          if (/\bconsole\b/.test(part)) return <span key={i} className="text-orange-500 dark:text-orange-300">{part}</span>;
+          if (/\blog\b/.test(part)) return <span key={i} className="text-orange-500 dark:text-orange-300">{part}</span>;
           return <span key={i} className="text-gray-900 dark:text-gray-100">{part}</span>;
         })}
       </div>
@@ -93,4 +95,4 @@ console.log(\`Hire \${kacper.role} for your next \${kacper.seeking}!\`);`;
   );
 };
 
-export default InteractiveTerminal
+export default InteractiveTerminal;

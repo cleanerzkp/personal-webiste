@@ -5,7 +5,7 @@ import InteractiveTerminal from './InteractiveTerminal';
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-background text-foreground">
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-background text-foreground">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap- lg:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -17,12 +17,10 @@ const Hero: React.FC = () => {
             Kacper Karbownik
           </h1>
           <h2 className="text-3xl sm:text-4xl text-primary">
-            Full-Stack Developer
+            Full-Stack Web3 Developer
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground">
-            Bridging traditional web development with cutting-edge blockchain technology. 
-            Experienced in React, Node.js, and exploring Solidity for Web3 projects. 
-            Passionate about building innovative solutions for the future of the web.
+            Specializing in merging traditional web skills with blockchain technology. Passionate about crafting seamless, user-focused experiences in the decentralized world.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
             <a
