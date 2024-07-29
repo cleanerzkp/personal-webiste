@@ -9,15 +9,14 @@ const InteractiveTerminal: React.FC = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
 
   const fullText = `const kacper = {
-  skills: ["TypeScript", "React", "Solidity", "Node.js"],
-  passions: ["dApps 🏗️", "Blockchain 🔗"],
-  hobbies: ["Coding 💻", "Working-out 🏋️‍♂️", "Coffee ☕"],
+  skills: ["TypeScript", "React", "Node.js", "Python", "SQL"],
+  passions: ["Full-Stack Development 🌐", "Backend Engineering ⚙️"],
+  hobbies: ["Coding 💻", "Gaming 🎮", "Coffee ☕"],
   achievement: "ETH Global Brussels Finalist 🏆",
-  learning: ["ZK proofs 🔐, ML 🤖"],
-  building: ["DEX dark pool 🌊, AI smart contract generator 🧠⚡"]
+  learning: ["Advanced Python 🐍", "Machine Learning 🤖"],
 };
 
-console.log("Hi 👋 I'm Kacper, a Full-Stack Web3 Developer");`;
+console.log("Hi 👋 I'm Kacper");`;
 
   useEffect(() => {
     if (isTyping) {
@@ -41,22 +40,22 @@ console.log("Hi 👋 I'm Kacper, a Full-Stack Web3 Developer");`;
     setIsTyping(true);
   };
 
-const syntaxHighlight = (code: string): JSX.Element[] => {
-  return code.split('\n').map((line, index) => (
-    <div key={index} className="flex">
-      {line.split(/(".*?"|\/\/.*|\b(?:const|let|var|function|return|type|interface|skills|passions|hobbies|achievement|learning|building)\b|[{}(),[\]:.])/).filter(part => part).map((part, i) => {
-        if (/^".*"$/.test(part)) return <span key={i} className="text-green-500 dark:text-green-300">{part}</span>;
-        if (/^\/\/.*$/.test(part)) return <span key={i} className="text-gray-500 dark:text-gray-400">{part}</span>;
-        if (/\b(const|let|var|function|return|type|interface)\b/.test(part)) return <span key={i} className="text-blue-500 dark:text-blue-300">{part}</span>;
-        if (/[{}(),[\]:.]/.test(part)) return <span key={i} className="text-gray-700 dark:text-gray-300">{part}</span>;
-        if (/\b(skills|passions|hobbies|achievement|learning|building)\b/.test(part)) return <span key={i} className="text-purple-500 dark:text-purple-300">{part}</span>;
-        if (/\bconsole\b/.test(part)) return <span key={i} className="text-orange-500 dark:text-orange-300">{part}</span>;
-        if (/\blog\b/.test(part)) return <span key={i} className="text-orange-500 dark:text-orange-300">{part}</span>;
-        return <span key={i} className="text-gray-900 dark:text-gray-100">{part}</span>;
-      })}
-    </div>
-  ));
-};
+  const syntaxHighlight = (code: string): JSX.Element[] => {
+    return code.split('\n').map((line, index) => (
+      <div key={index} className="flex">
+        {line.split(/(".*?"|\/\/.*|\b(?:const|let|var|function|return|type|interface|skills|passions|hobbies|achievement|learning|building)\b|[{}(),[\]:.])/).filter(part => part).map((part, i) => {
+          if (/^".*"$/.test(part)) return <span key={i} className="text-green-500 dark:text-green-300">{part}</span>;
+          if (/^\/\/.*$/.test(part)) return <span key={i} className="text-gray-500 dark:text-gray-400">{part}</span>;
+          if (/\b(const|let|var|function|return|type|interface)\b/.test(part)) return <span key={i} className="text-blue-500 dark:text-blue-300">{part}</span>;
+          if (/[{}(),[\]:.]/.test(part)) return <span key={i} className="text-gray-700 dark:text-gray-300">{part}</span>;
+          if (/\b(skills|passions|hobbies|achievement|learning|building)\b/.test(part)) return <span key={i} className="text-purple-500 dark:text-purple-300">{part}</span>;
+          if (/\bconsole\b/.test(part)) return <span key={i} className="text-orange-500 dark:text-orange-300">{part}</span>;
+          if (/\blog\b/.test(part)) return <span key={i} className="text-orange-500 dark:text-orange-300">{part}</span>;
+          return <span key={i} className="text-gray-900 dark:text-gray-100">{part}</span>;
+        })}
+      </div>
+    ));
+  };
 
   return (
     <motion.div
@@ -81,7 +80,7 @@ const syntaxHighlight = (code: string): JSX.Element[] => {
   onClick={handleDiscover}
   className="font-bold py-3 px-8 rounded-full text-center transition duration-300 bg-primary text-primary-foreground hover:bg-primary/90"
 >
-  click me
+  About me
 </button>
           </div>
         ) : (

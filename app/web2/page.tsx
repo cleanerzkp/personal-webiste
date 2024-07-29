@@ -1,29 +1,21 @@
+'use client';
+
+import React from 'react';
+import Hero from './Hero'; // Ensure this path matches where your Hero component is located
+
 export default function Home() {
+    const handleScroll = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="flex flex-col min-h-[calc(100vh-4rem)]">
-            <main className="flex-grow">
-                <section id="about" className="py-8 bg-white">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <h2 className="text-2xl font-semibold mb-4">About Us</h2>
-                        <p className="text-lg">
-                            We are a cutting-edge company focused on delivering top-notch web solutions.
-                        </p>
-                    </div>
-                </section>
+            <Hero onViewProjects={() => handleScroll('features')} onContact={() => window.open('https://t.me/yourtelegram', '_blank')} /> {/* Hero Section */}
 
-                <section id="features" className="py-8 bg-gray-50">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <h2 className="text-2xl font-semibold mb-4">Our Features</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {[1, 2, 3].map((num) => (
-                                <div key={num} className="bg-white p-6 rounded-lg shadow-md">
-                                    <h3 className="text-xl font-semibold mb-2">Feature {num}</h3>
-                                    <p>Detail about feature {num}.</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+            <main className="flex-grow">
             </main>
         </div>
     );
