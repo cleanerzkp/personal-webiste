@@ -14,10 +14,9 @@ const InteractiveTerminal: React.FC = () => {
   hobbies: ["Coding 💻", "Working-out 🏋️‍♂️", "Coffee ☕"],
   achievement: "ETH Global Brussels Finalist 🏆",
   learning: ["ZK proofs 🔐, ML 🤖"],
-  building: ["DEX dark pool 🌊, AI smart contract generator"]
+  building: ["DEX dark pool, AI smart contract generator"]
 };
-
-console.log("Hi 👋 I'm Kacper, a Full-Stack Web3 Developer");`;
+console.log("Hi 👋 I'm Kacper");`;
 
   useEffect(() => {
     if (isTyping) {
