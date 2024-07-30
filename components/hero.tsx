@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import InteractiveTerminal from './InteractiveTerminal';
+import { MdEmail } from 'react-icons/md';
 
 const Hero: React.FC = () => {
   return (
@@ -29,12 +30,12 @@ const Hero: React.FC = () => {
             >
               View Projects
             </a> */}
-            <a
-  href="mailto:example@example.com"
+<a
+  href="mailto:kacperkarbownik98@gmail.com"
   rel="noopener noreferrer"
-  className="font-bold py-3 px-8 rounded-full text-center transition duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/90"
+  className="font-bold py-3 px-8 rounded-full text-center transition duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/90 flex items-center justify-center"
 >
-  Contact
+  Contact <MdEmail className="ml-2" />
 </a>
           </div>
         </motion.div>
