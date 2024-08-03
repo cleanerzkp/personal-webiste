@@ -20,16 +20,16 @@ const Hero: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="#projects"
+              href="#experience"
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-2 px-6 rounded-full text-center transition duration-300"
             >
-              Projects
+              Experience
             </a>
             <a
-              href="#contact"
+              href="#projects"
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold py-2 px-6 rounded-full text-center transition duration-300"
             >
-              Contact
+              Projects
             </a>
           </div>
         </motion.div>

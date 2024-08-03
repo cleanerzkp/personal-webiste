@@ -37,19 +37,21 @@ const ExperienceSection: React.FC = () => (
   <section id="experience" className="py-6 sm:py-8">
     <SectionTitle
       title="Experience"
-      description="Places where I’ve contributed and grown as a developer."
+      description="Professional experience in Web3 development and data analysis."
     />
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-      {experiences.length > 0 ? (
-        experiences.map((experience) => (
-          <ExperienceCard
-            key={experience.companyName}
-            experience={experience}
-          />
-        ))
-      ) : (
-        <p className="text-center text-muted-foreground">No experience data available at the moment.</p>
-      )}
+    <div className="max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        {experiences.length > 0 ? (
+          experiences.map((experience) => (
+            <ExperienceCard
+              key={experience.companyName}
+              experience={experience}
+            />
+          ))
+        ) : (
+          <p className="text-center text-muted-foreground col-span-2">No experience data available at the moment.</p>
+        )}
+      </div>
     </div>
   </section>
 );
