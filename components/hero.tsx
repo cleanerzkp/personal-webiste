@@ -1,10 +1,16 @@
 'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
+import { track } from '@vercel/analytics/react';
 import InteractiveTerminal from './InteractiveTerminal';
 import { MdEmail } from 'react-icons/md';
 
 const Hero: React.FC = () => {
+  const handleContactClick = () => {
+    track('Contact Button Clicked', { location: 'Hero' });
+  };
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-background text-foreground">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
@@ -24,19 +30,14 @@ const Hero: React.FC = () => {
             Specializing in merging traditional web skills with blockchain technology. Passionate about crafting seamless, user-focused experiences in the decentralized world.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
-            {/* <a
-              href="#projects"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-8 rounded-full text-center transition duration-300"
+            <a
+              href="mailto:kacperkarbownik98@gmail.com"
+              rel="noopener noreferrer"
+              className="font-bold py-3 px-8 rounded-full text-center transition duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/90 flex items-center justify-center"
+              onClick={handleContactClick}
             >
-              View Projects
-            </a> */}
-<a
-  href="mailto:kacperkarbownik98@gmail.com"
-  rel="noopener noreferrer"
-  className="font-bold py-3 px-8 rounded-full text-center transition duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/90 flex items-center justify-center"
->
-  Contact <MdEmail className="ml-2" />
-</a>
+              Contact <MdEmail className="ml-2" />
+            </a>
           </div>
         </motion.div>
         <motion.div
