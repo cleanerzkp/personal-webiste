@@ -2,49 +2,43 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { track } from '@vercel/analytics/react';
 import InteractiveTerminal from './InteractiveTerminal';
-import { MdEmail } from 'react-icons/md';
 
 const Hero: React.FC = () => {
-  const handleContactClick = () => {
-    track('Contact Button Clicked', { location: 'Hero' });
-  };
-
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-background text-foreground">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-16 sm:pb-24 bg-background text-foreground">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:w-1/2 space-y-6"
+          transition={{ duration: 0.6 }}
+          className="lg:w-1/2 text-center lg:text-left"
         >
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
-            Kacper Karbownik
-          </h1>
-          <h2 className="text-3xl sm:text-4xl text-primary">
-            Full-Stack Web3 Developer
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">
-            Specializing in merging traditional web skills with blockchain technology. Passionate about crafting seamless, user-focused experiences in the decentralized world.
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">Kacper Karbownik</h1>
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-primary mb-4">Full-Stack Developer</h2>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6">
+            Blending web skills with backend expertise. Crafting efficient, scalable applications.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
-              href="mailto:kacperkarbownik98@gmail.com"
-              rel="noopener noreferrer"
-              className="font-bold py-3 px-8 rounded-full text-center transition duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/90 flex items-center justify-center"
-              onClick={handleContactClick}
+              href="#experience"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-2 px-6 rounded-full text-center transition duration-300"
             >
-              Contact <MdEmail className="ml-2" />
+              Experience
+            </a>
+            <a
+              href="#projects"
+              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold py-2 px-6 rounded-full text-center transition duration-300"
+            >
+              Projects
             </a>
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:w-1/2"
+          transition={{ duration: 0.6 }}
+          className="lg:w-1/2 mt-8 lg:mt-0"
         >
           <InteractiveTerminal />
         </motion.div>
