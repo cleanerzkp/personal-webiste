@@ -31,11 +31,12 @@ console.log("Hi 👋 I'm Kacper");`;
           }
         } else {
           clearInterval(typingEffect);
+          track('Terminal Typing Completed');
         }
       }, 20);
       return () => clearInterval(typingEffect);
     }
-  }, [isTyping]);
+  }, [isTyping, fullText]);
 
   const handleDiscover = () => {
     setIsTyping(true);
