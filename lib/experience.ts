@@ -1,5 +1,13 @@
 export const experiences = [
     {
+      position: 'Vue.js/TypeScript Developer',
+      companyName: 'Rotki',
+      description: 'Working on Rotki, a local-first, privacy-focused portfolio tracker. Tasks include developing new frontend features with Vue.js and TypeScript, optimizing performance, and enhancing the scalability of a modular Vue.js app. Focused on integrating DeFi and Ethereum protocols, maintaining code quality, and improving user experience.',
+      tags: ['Vue.js', 'TypeScript', 'Frontend', 'Blockchain'],
+      startDate: 'Sep 2024',
+      endDate: 'Present'
+    },
+    {
       companyName: 'Freelancing',
       position: 'Full-Stack Web3 Dev',
       description: 'Contracted by Web3 leaders such as Golem Network and the Mina Foundation to develop and enhance cutting-edge blockchain solutions. Worked on a variety of impactful projects, bringing technical expertise and innovative approaches to the forefront of the decentralized tech landscape.',
